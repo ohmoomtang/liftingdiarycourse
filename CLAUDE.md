@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+> **IMPORTANT: Before generating any code, always first check the `/docs` directory for a relevant documentation file and follow its guidance.**
+
 @AGENTS.md
 
 ## Commands
@@ -20,6 +22,13 @@ pnpm lint       # Run ESLint
 - **TypeScript**
 - **Tailwind CSS v4** (via `@tailwindcss/postcss`)
 - Package manager: **pnpm**
+
+## Data Fetching
+
+> **See `docs/data-fetching.md` for full rules.** Summary:
+> - ALL data fetching MUST be done in Server Components — never in Client Components, Route Handlers, or via `fetch` on the client
+> - ALL database queries MUST use Drizzle ORM helper functions in the `/data` directory — never raw SQL
+> - EVERY query MUST be scoped to the authenticated user's ID — users must never access other users' data
 
 ## Architecture
 
