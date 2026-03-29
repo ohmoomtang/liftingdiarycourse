@@ -2,6 +2,28 @@ import { db } from "@/db";
 import { workouts } from "@/db/schema";
 import { eq, and, gte, lt } from "drizzle-orm";
 
+export async function getWorkoutById(workoutId: number, userId: string) {
+  const result = await db
+    .select()
+    .from(workouts)
+    .where(and(eq(workouts.id, workoutId), eq(workouts.userId, userId)));
+  return result[0] ?? null;
+}
+
+export async function updateWorkout(
+  workoutId: number,
+  userId: string,
+  name: string,
+  startedAt: Date
+) {
+  const result = await db
+    .update(workouts)
+    .set({ name, startedAt, updatedAt: new Date() })
+    .where(and(eq(workouts.id, workoutId), eq(workouts.userId, userId)))
+    .returning();
+  return result[0] ?? null;
+}
+
 export async function createWorkout(
   userId: string,
   name: string,

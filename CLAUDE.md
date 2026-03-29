@@ -39,6 +39,21 @@ pnpm lint       # Run ESLint
 > - ALL Server Actions MUST validate inputs with Zod before doing anything else
 > - EVERY mutation MUST be scoped to the authenticated user's ID from the server-side session
 
+## Server Components
+
+> **See `docs/server-components.md` for full rules.** Summary:
+> - ALL page components MUST be `async`
+> - `params` and `searchParams` are Promises — MUST be awaited before accessing properties
+> - Type them as `Promise<{...}>`, never as plain objects
+> - Validate and coerce dynamic route params before use; call `notFound()` for invalid values
+
+## Routing
+
+> **See `docs/routing.md` for full rules.** Summary:
+> - ALL app routes MUST be nested under `/dashboard`
+> - Route protection MUST be handled in middleware (`src/proxy.ts`) via Clerk — never in page components
+> - Dynamic route params MUST be awaited and validated; call `notFound()` for invalid values
+
 ## Architecture
 
 This is a Next.js App Router project. All routes live under `src/app/` using file-based routing. The entry point is `src/app/page.tsx` with layout at `src/app/layout.tsx`.
