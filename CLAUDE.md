@@ -30,6 +30,15 @@ pnpm lint       # Run ESLint
 > - ALL database queries MUST use Drizzle ORM helper functions in the `/data` directory — never raw SQL
 > - EVERY query MUST be scoped to the authenticated user's ID — users must never access other users' data
 
+## Data Mutation
+
+> **See `docs/data-mutation.md` for full rules.** Summary:
+> - ALL mutations MUST use Drizzle ORM helper functions in the `/data` directory — never raw SQL or direct db calls in actions
+> - ALL mutations MUST be triggered via Server Actions in colocated `actions.ts` files — never Route Handlers
+> - Server Action params MUST be typed — `FormData` is prohibited
+> - ALL Server Actions MUST validate inputs with Zod before doing anything else
+> - EVERY mutation MUST be scoped to the authenticated user's ID from the server-side session
+
 ## Architecture
 
 This is a Next.js App Router project. All routes live under `src/app/` using file-based routing. The entry point is `src/app/page.tsx` with layout at `src/app/layout.tsx`.
