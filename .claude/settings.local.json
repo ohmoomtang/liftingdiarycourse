@@ -6,7 +6,22 @@
       "mcp__neon__list_projects",
       "mcp__neon__get_database_tables",
       "mcp__neon__describe_table_schema",
-      "mcp__neon__run_sql_transaction"
+      "mcp__neon__run_sql_transaction",
+      "Bash(grep -r export.*auth /Users/ohmoomtang/liftingdiarycourse/node_modules/@clerk/nextjs/dist/types.d.ts)",
+      "Bash(grep export.*auth /Users/ohmoomtang/liftingdiarycourse/node_modules/@clerk/nextjs/dist/cjs/index.js)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm dlx:*)",
+      "Bash(grep -r export.*auth /Users/ohmoomtang/liftingdiarycourse/node_modules/@clerk/nextjs/dist/types/index.d.ts)",
+      "Bash(grep -r export.*auth /Users/ohmoomtang/liftingdiarycourse/node_modules/@clerk/nextjs/dist/types/)",
+      "Bash(grep -r \"DayPicker\\\\|onSelect\\\\|selected\" node_modules/react-day-picker/dist/*.d.ts)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "Bash(git stash:*)",
+      "mcp__neon__run_sql",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(find /Users/ohmoomtang/liftingdiarycourse/src -not -path */node_modules/* -type d)",
+      "Bash(find /Users/ohmoomtang/liftingdiarycourse -maxdepth 2 -not -path */node_modules/* -type f \\\\\\(-name *.md -o -name *.json -o -name *.ts \\\\\\))"
     ]
   },
   "enableAllProjectMcpServers": true,

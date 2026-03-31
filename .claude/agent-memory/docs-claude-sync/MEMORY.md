@@ -1,0 +1,1 @@
+- [docs-claude-sync index](project_docs_index.md) — tracks all /docs files referenced in CLAUDE.md and the section formatting convention
